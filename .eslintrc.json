@@ -3,7 +3,7 @@
     "plugin:react/recommended",
     "airbnb",
     "plugin:prettier/recommended",
-    "plugin:testing-library/recommended",
+    "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
     "prettier/react",
     "next/core-web-vitals",
