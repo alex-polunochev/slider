@@ -16,6 +16,14 @@ This is a [Next.js](https://nextjs.org/)-based project bootstrapped with [`creat
 
 Due to the freedom of choice for platform and tools, Next.js was selected along with [`Styled Components`](https://github.com/styled-components/styled-components) for app features implementation.
 
+Find more about how standard `Image` component works in Next applications - ['Image Optimizations'](https://nextjs.org/docs/basic-features/image-optimization)
+
+> The Automatic Image Optimization allows for resizing, optimizing, and serving images in modern formats like WebP when the browser supports it. This avoids shipping large images to devices with a smaller viewport.
+> ...
+> Instead of optimizing images at build time, Next.js optimizes images on-demand, as users request them. Unlike static site generators and static-only solutions, your build times aren't increased, whether shipping 10 images or 10 million images.
+> ...
+> Images are always rendered in such a way as to avoid ['Cumulative Layout Shift'](https://web.dev/cls/).
+
 ## Running the application in development mode
 
 Application can be downloaded as ZIP archive or cloned with `git`.
