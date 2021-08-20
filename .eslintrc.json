@@ -5,7 +5,7 @@
     "plugin:prettier/recommended",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
-    "prettier/react",
+    "prettier",
     "next/core-web-vitals",
     "plugin:@next/next/recommended"
   ]
