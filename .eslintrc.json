@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended"
+  ]
+}
