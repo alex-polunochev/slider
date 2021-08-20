@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
@@ -60,17 +60,12 @@ export const Slider = ({ images }) => {
   // for each image create a corresponding entry with `isLoaded` boolean flag and `counter` field.
   const [counters, setCounters] = useState(resetCounters());
 
-  // if for any reason images prop was updated by the parent - re-initialize the metrics from scratch
-  useEffect(() => {
-    setCounters(resetCounters());
-  }, [images]);
-
   const updateViewState = (idx) => {
     setPointer(idx);
     setIsLoading(true);
 
     const updatedCounters = [...counters];
-    updatedCounters[idx] = updatedCounters[idx] + 1;
+    updatedCounters[idx] += 1;
     setCounters(updatedCounters);
   };
 
