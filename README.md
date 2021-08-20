@@ -8,6 +8,8 @@ The slideshow application does:
 - displays the images provided in the deployed folder (static images, list with paths supplied via constant variable);
 - tracks how many times each picture is viewed (does not store these values between refreshes).
 
+![app screenshot](/public/app_screenshot.png)
+
 ## Implementation Details
 
 This is a [Next.js](https://nextjs.org/)-based project bootstrapped with [`create-next-app`](https://nextjs.org/docs/api-reference/create-next-app).
@@ -42,6 +44,8 @@ Ideal deployment solution for Next.JS application would be Vercel cloud platform
 Vercel connects directly to Github repository, listens to `push` commands on a configured branches and automatically builds and deploys applications to either staging server or to production.
 
 Find the deployed to Vercel version of the **Slider Test App** by the link - https://slider-test-mocha.vercel.app/
+
+![vercel screenshot](/public/vercel_screenshot.png)
 
 If a different cloud platform is used, find the instructions on how to deploy generated assets and launch the app under those conditions.
 To generate assets for deployment follow the guide (e.g. for NodeJS server) https://nextjs.org/docs/deployment#other-hosting-options
