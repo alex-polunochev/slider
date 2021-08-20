@@ -46,10 +46,10 @@ const Wrapper = styled.div`
 `;
 
 export const LoadingAnimation = (props) => {
-  const { className } = props;
+  const { className, testId } = props;
 
   return (
-    <Wrapper className={className}>
+    <Wrapper className={className} data-testid={testId}>
       <div className="sk-flow">
         <div className="sk-flow-dot" />
         <div className="sk-flow-dot" />
@@ -60,9 +60,11 @@ export const LoadingAnimation = (props) => {
 };
 
 LoadingAnimation.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  testId: PropTypes.string
 };
 
 LoadingAnimation.defaultProps = {
-  className: ''
+  className: '',
+  testId: ''
 };

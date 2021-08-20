@@ -32,9 +32,9 @@ const Wrapper = styled.div`
 `;
 
 export const ArrowIcon = (props) => {
-  const { direction, className, onClick } = props;
+  const { direction, className, onClick, testId } = props;
   return (
-    <Wrapper className={className} onClick={onClick}>
+    <Wrapper className={className} onClick={onClick} data-testid={testId}>
       <Arrow direction={direction} />
     </Wrapper>
   );
@@ -43,10 +43,12 @@ export const ArrowIcon = (props) => {
 ArrowIcon.propTypes = {
   direction: PropTypes.oneOf(['left', 'right']),
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  testId: PropTypes.string
 };
 
 ArrowIcon.defaultProps = {
   direction: 'left',
-  className: ''
+  className: '',
+  testId: ''
 };

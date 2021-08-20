@@ -91,6 +91,7 @@ export const Slider = ({ images }) => {
       <SliderWrapper>
         <Frame>
           <Image
+            data-testid="slider-image"
             src={`/pictures/${images[pointer]}`}
             layout="fill"
             alt={`Slide #${pointer}`}
@@ -98,9 +99,9 @@ export const Slider = ({ images }) => {
             onLoadingComplete={() => setIsLoading(false)}
           />
           <ArtifactsHolder>
-            <StyledArrow direction="left" onClick={decrementPointer} />
-            {isLoading && <LoadingAnimation />}
-            <StyledArrow direction="right" onClick={incrementPointer} />
+            <StyledArrow direction="left" onClick={decrementPointer} testId="leftArrow" />
+            {isLoading && <LoadingAnimation testId="loading" />}
+            <StyledArrow direction="right" onClick={incrementPointer} testId="rightArrow" />
           </ArtifactsHolder>
         </Frame>
         <ViewsCount>Views: {counters[pointer]}</ViewsCount>
