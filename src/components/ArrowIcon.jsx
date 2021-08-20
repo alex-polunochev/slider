@@ -11,18 +11,16 @@ const Arrow = styled.div`
 `;
 
 const Wrapper = styled.div`
-  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  width: 60px;
   height: 60px;
   margin: 10px;
-  cursor: pointer;
   padding: 10px;
   border-radius: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-
   background-color: rgba(66, 66, 66, 0.54);
   :hover {
     ${Arrow} {

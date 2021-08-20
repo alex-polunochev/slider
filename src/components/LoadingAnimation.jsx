@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+// As seen on https://github.com/tobiasahlin/SpinKit
+
 const Wrapper = styled.div`
   .sk-flow {
     margin: auto;

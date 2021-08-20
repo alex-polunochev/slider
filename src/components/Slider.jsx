@@ -51,13 +51,13 @@ export const Slider = ({ images }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const resetCounters = () => {
-    return images.map((next, idx) => {
+    return images.map((img, idx) => {
       // set views for very first image to 1, as it is loaded on screen on Slider mount
       return idx === 0 ? 1 : 0;
     });
   };
 
-  // for each image create a corresponding entry with `isLoaded` boolean flag and `counter` field.
+  // for each image create a counter
   const [counters, setCounters] = useState(resetCounters());
 
   const updateViewState = (idx) => {
@@ -82,26 +82,24 @@ export const Slider = ({ images }) => {
   };
 
   return (
-    <>
-      <SliderWrapper>
-        <Frame>
-          <Image
-            data-testid="slider-image"
-            src={`/pictures/${images[pointer]}`}
-            layout="fill"
-            alt={`Slide #${pointer}`}
-            objectFit="contain"
-            onLoadingComplete={() => setIsLoading(false)}
-          />
-          <ArtifactsHolder>
-            <StyledArrow direction="left" onClick={decrementPointer} testId="leftArrow" />
-            {isLoading && <LoadingAnimation testId="loading" />}
-            <StyledArrow direction="right" onClick={incrementPointer} testId="rightArrow" />
-          </ArtifactsHolder>
-        </Frame>
-        <ViewsCount>Views: {counters[pointer]}</ViewsCount>
-      </SliderWrapper>
-    </>
+    <SliderWrapper>
+      <Frame>
+        <Image
+          data-testid="slider-image"
+          src={`/pictures/${images[pointer]}`}
+          layout="fill"
+          alt={`Slide #${pointer}`}
+          objectFit="contain"
+          onLoadingComplete={() => setIsLoading(false)}
+        />
+        <ArtifactsHolder>
+          <StyledArrow direction="left" onClick={decrementPointer} testId="leftArrow" />
+          {isLoading && <LoadingAnimation testId="loading" />}
+          <StyledArrow direction="right" onClick={incrementPointer} testId="rightArrow" />
+        </ArtifactsHolder>
+      </Frame>
+      <ViewsCount>Views: {counters[pointer]}</ViewsCount>
+    </SliderWrapper>
   );
 };
 
