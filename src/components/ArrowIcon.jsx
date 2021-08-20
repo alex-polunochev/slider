@@ -23,10 +23,10 @@ const Wrapper = styled.div`
   width: 60px;
   height: 60px;
 
-  background-color: #ffffff;
+  background-color: rgba(66, 66, 66, 0.54);
   :hover {
     ${Arrow} {
-      border-color: #333;
+      border-color: #fff;
     }
   }
 `;

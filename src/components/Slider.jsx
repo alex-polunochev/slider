@@ -19,7 +19,7 @@ const StyledArrow = styled(ArrowIcon)`
   opacity: 0;
 `;
 
-const ArrowsHolder = styled.div`
+const ArtifactsHolder = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -39,13 +39,21 @@ const Frame = styled.div`
   }
 `;
 
+const ViewsCount = styled.div`
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  ${media.PHONE`position: relative; bottom: 50px; background-color: #000000aa; padding: 3px 10px; width: fit-content; margin: auto;`}
+`;
+
 export const Slider = ({ images }) => {
   const [pointer, setPointer] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const resetCounters = () => {
-    return images.map(() => {
-      return 0;
+    return images.map((next, idx) => {
+      // set views for very first image to 1, as it is loaded on screen on Slider mount
+      return idx === 0 ? 1 : 0;
     });
   };
 
@@ -63,7 +71,7 @@ export const Slider = ({ images }) => {
 
     const updatedCounters = [...counters];
     updatedCounters[idx] = updatedCounters[idx] + 1;
-    setCounters[updatedCounters];
+    setCounters(updatedCounters);
   };
 
   const incrementPointer = () => {
@@ -89,12 +97,13 @@ export const Slider = ({ images }) => {
             objectFit="contain"
             onLoadingComplete={() => setIsLoading(false)}
           />
-          <ArrowsHolder>
+          <ArtifactsHolder>
             <StyledArrow direction="left" onClick={decrementPointer} />
             {isLoading && <LoadingAnimation />}
             <StyledArrow direction="right" onClick={incrementPointer} />
-          </ArrowsHolder>
+          </ArtifactsHolder>
         </Frame>
+        <ViewsCount>Views: {counters[pointer]}</ViewsCount>
       </SliderWrapper>
     </>
   );
