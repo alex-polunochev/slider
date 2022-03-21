@@ -1,0 +1,13 @@
+const DeadCodePlugin = require('webpack-deadcode-plugin');
+
+export const webpackConfig = {
+  optimization: {
+    usedExports: true
+  },
+  plugins: [
+    new DeadCodePlugin({
+      patterns: ['src/**/*.(js|jsx|css)'],
+      exclude: ['**/*.(stories|spec).(js|jsx)']
+    })
+  ]
+};

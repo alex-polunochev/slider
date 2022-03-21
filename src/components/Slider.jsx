@@ -7,6 +7,8 @@ import { ArrowIcon } from './ArrowIcon';
 import { media } from '../utils/media';
 import { LoadingAnimation } from './LoadingAnimation';
 
+import { Thing } from './Thing';
+
 const SliderWrapper = styled.div`
   width: 100vw;
   height: 100vh;
@@ -99,6 +101,7 @@ export const Slider = ({ images }) => {
         </ArtifactsHolder>
       </Frame>
       <ViewsCount>Views: {counters[pointer]}</ViewsCount>
+      <Thing />
     </SliderWrapper>
   );
 };
